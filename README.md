@@ -54,6 +54,6 @@ Run: `docker run --rm --name myappts-nginx -p 8080:80  myappts:latest`
 
 ### How to Build fast
 
-**STEP 1**: cache the packages, `docker build --pull --rm -f "Dockerfile-react-yarn-cache" -t kinsprite/react-yarn-cache:latest .`. User `docker run --rm -it kinsprite/react-yarn-cache:latest bash` and `yarn cache list ` to check the cache.
+**STEP 1**: cache the packages, `docker build --pull --rm -f "Dockerfile-react-yarn-cache" -t kinsprite/react-yarn-cache:latest .`. Use `docker run --rm -it kinsprite/react-yarn-cache:latest bash` and `yarn cache list ` to check the cache.
 
 **STEP 2**: use the cache images as building images, `docker build --rm -f "Dockerfile-build-fast" -t myappts:latest .`.
