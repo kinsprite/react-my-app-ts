@@ -1,0 +1,11 @@
+# react yarn cache
+FROM node:lts
+
+RUN mkdir /app
+ADD . /app
+
+WORKDIR /app
+RUN yarn
+
+WORKDIR /
+RUN rm -Rf /app

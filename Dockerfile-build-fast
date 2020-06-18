@@ -1,5 +1,5 @@
 # build
-FROM node:lts as build
+FROM kinsprite/react-yarn-cache:latest as build
 
 RUN mkdir /app
 ADD . /app
