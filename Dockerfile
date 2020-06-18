@@ -1,0 +1,14 @@
+# build
+FROM node:lts as build
+
+RUN mkdir /app
+ADD . /app
+
+WORKDIR  /app
+RUN yarn
+RUN yarn build
+
+# release
+FROM nginx:stable-alpine
+COPY --from=build  /app/build      /usr/share/nginx/html
+COPY --from=build  /app/nginx-expires.conf  /etc/nginx/conf.d/expires.conf
